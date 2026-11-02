@@ -77,42 +77,11 @@
     .in-fs .rbtn .fs-in{display:none}
     .in-fs .rbtn .fs-out{display:block}
     .sep{height:1px;background:var(--line);margin:2px 5px}
-    #badge{position:absolute;top:1px;right:1px;min-width:16px;height:16px;padding:0 4px;border-radius:999px;
-      background:var(--red);color:#fff;font-size:10px;font-weight:700;line-height:16px;text-align:center;display:none}
-    #badge.show{display:block}
     #rail-show{position:absolute;z-index:19;left:env(safe-area-inset-left,0px);top:50%;width:24px;height:58px;
       transform:translate(-100%,-50%);border:1px solid var(--line);border-left:0;border-radius:0 12px 12px 0;
       background:var(--glass);display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;
       transition:transform .22s ease,opacity .22s ease}
     .rail-hidden #rail-show{transform:translate(0,-50%);opacity:.9;pointer-events:auto}
-
-    /* chat panel */
-    #chat-panel{position:absolute;z-index:21;top:10px;bottom:10px;
-      left:calc(env(safe-area-inset-left,0px) + 66px);width:min(310px,62vw);
-      display:flex;flex-direction:column;padding:10px;border-radius:16px;
-      background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(10px);
-      box-shadow:0 14px 40px rgba(0,0,0,.5);
-      opacity:0;visibility:hidden;transform:translateX(-14px);
-      transition:opacity .2s ease,transform .2s ease,visibility 0s linear .2s}
-    #chat-panel.open{opacity:1;visibility:visible;transform:none;transition:opacity .2s ease,transform .2s ease}
-    .rail-hidden #chat-panel{left:calc(env(safe-area-inset-left,0px) + 34px)}
-    .chat-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
-    .chat-head h2{font-size:15px;font-weight:700;flex:1;
-      background:linear-gradient(90deg,var(--red-soft),var(--purple-soft));-webkit-background-clip:text;background-clip:text;color:transparent}
-    #chat-online{font-size:12px;color:var(--muted)}
-    #chat-close{width:28px;height:28px;border-radius:8px;border:1px solid var(--line);background:transparent;cursor:pointer;font-size:16px;line-height:1}
-    #chat-messages{flex:1;min-height:0;overflow-y:auto;padding:8px;border-radius:10px;touch-action:pan-y;
-      background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.1);font-size:14px;line-height:1.35;word-break:break-word}
-    .chat-row{margin-bottom:6px}
-    .chat-name{font-weight:600}
-    #chat-name,#chat-input{min-width:0;padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.2);
-      background:rgba(0,0,0,.3);color:inherit;font:inherit;font-size:14px}
-    #chat-name{margin-top:8px;font-size:13px;padding:6px 10px}
-    #chat-form{display:flex;gap:6px;margin-top:6px}
-    #chat-input{flex:1}
-    #chat-form button{padding:8px 14px;border-radius:8px;border:0;cursor:pointer;font-weight:700;
-      background:linear-gradient(135deg,var(--red),var(--purple));color:#fff}
-    #chat-status{min-height:15px;margin-top:4px;font-size:12px;color:var(--muted)}
 
     /* rotate hint */
     #rotate-hint{position:absolute;inset:0;z-index:30;display:none;place-items:center;text-align:center;padding:24px;
@@ -205,7 +174,6 @@
       .tag{margin:6px auto 12px;font-size:15px}
       .label{margin:16px 0 8px}
       .rbtn{width:36px;height:36px}
-      #chat-panel{top:6px;bottom:6px}
     }
     @media (prefers-reduced-motion:reduce){.pc,#rotate-hint .ph{animation:none}*{transition:none !important}}
 
@@ -242,10 +210,6 @@
 
     <!-- left bar -->
     <nav id="rail" aria-label="Game menu">
-      <button class="rbtn" id="btn-chat" type="button" title="Chat" aria-label="Open chat" aria-expanded="false">
-        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H8l-5 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        <span id="badge"></span>
-      </button>
       <button class="rbtn" id="fs-btn" type="button" title="Full screen" aria-label="Toggle full screen">
         <svg class="fs-in" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
         <svg class="fs-out" viewBox="0 0 24 24"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/></svg>
@@ -261,22 +225,6 @@
     <button id="rail-show" type="button" title="Show bar" aria-label="Show bar">
       <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
-
-    <!-- chat -->
-    <section id="chat-panel" aria-label="Live chat">
-      <div class="chat-head">
-        <h2>Live Chat</h2>
-        <span id="chat-online">connecting…</span>
-        <button id="chat-close" type="button" aria-label="Close chat">×</button>
-      </div>
-      <div id="chat-messages" aria-live="polite"></div>
-      <input id="chat-name" maxlength="20" placeholder="Your nickname" aria-label="Nickname">
-      <form id="chat-form" autocomplete="off">
-        <input id="chat-input" maxlength="200" placeholder="Say hi or find a game…" aria-label="Message">
-        <button type="submit">Send</button>
-      </form>
-      <div id="chat-status"></div>
-    </section>
 
     <!-- rotate hint -->
     <div id="rotate-hint">
@@ -415,37 +363,6 @@
     $("rail-hide").addEventListener("click", function () { setRailHidden(true); });
     $("rail-show").addEventListener("click", function () { setRailHidden(false); });
 
-    /* ---------- chat open / close + unread badge ---------- */
-    var panel = $("chat-panel"), chatBtn = $("btn-chat"), badge = $("badge"), unread = 0;
-    function updateBadge() {
-      badge.textContent = unread > 9 ? "9+" : String(unread);
-      badge.classList.toggle("show", unread > 0);
-    }
-    function setChat(open) {
-      panel.classList.toggle("open", open);
-      chatBtn.classList.toggle("active", open);
-      chatBtn.setAttribute("aria-expanded", open ? "true" : "false");
-      if (open) {
-        unread = 0; updateBadge();
-        var box = $("chat-messages"); box.scrollTop = box.scrollHeight;
-      }
-    }
-    chatBtn.addEventListener("click", function () { setChat(!panel.classList.contains("open")); });
-    $("chat-close").addEventListener("click", function () { setChat(false); });
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && panel.classList.contains("open")) setChat(false);
-    });
-    window.addEventListener("thulla:chat", function () {
-      if (!panel.classList.contains("open")) { unread++; updateBadge(); }
-    });
-
-    // keep typing in the chat away from the game's keyboard handling
-    ["keydown", "keyup", "keypress"].forEach(function (ev) {
-      [$("chat-input"), $("chat-name")].forEach(function (el) {
-        el.addEventListener(ev, function (e) { e.stopPropagation(); });
-      });
-    });
-
     /* ---------- home, back button, rotate hint ---------- */
     var started = false;
     function leaveGame() {
@@ -517,9 +434,5 @@
     }
   })();
   </script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
-  <script src="chat.js"></script>
 </body>
 </html>
