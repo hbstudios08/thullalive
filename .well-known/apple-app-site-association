@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "FTN38CTT4J.com.ahstudios.thulla",
+        "paths": [ 
+          "/join",
+          "/join*"
+        ]
+      }
+    ]
+  }
+}
