@@ -1,0 +1,32 @@
+{
+  "project_info": {
+    "project_number": "172924001608",
+    "firebase_url": "https://thulla-6db08-default-rtdb.firebaseio.com",
+    "project_id": "thulla-6db08",
+    "storage_bucket": "thulla-6db08.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:172924001608:ios:d652fbb173aa9ccddaa77d",
+        "android_client_info": {
+          "package_name": "com.ahstudios.thulla"
+        }
+      },
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1sX03wg-3WKuKx2KD5mzOWRCDXl0RqaA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 0
+        },
+        "appinvite_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
