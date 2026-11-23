@@ -6,21 +6,21 @@
   <title>Thulla Online | Play the classic card game with friends</title>
   <meta name="description" content="Play Thulla online with friends. Free multiplayer card game with voice chat. Play instantly in your browser or download the app.">
   <meta name="theme-color" content="#14061f">
-  <link rel="canonical" href="https://thulla.online/">
+  <link rel="canonical" href="https://thulla.live/">
   
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Thulla Online Voice">
-  <meta property="og:url" content="https://thulla.online/">
+  <meta property="og:url" content="https://thulla.live/">
   <meta property="og:title" content="Thulla Online Voice | Play the classic card game with friends">
   <meta property="og:description" content="The classic card game, online with friends. Play instantly in your browser.">
-  <meta property="og:image" content="https://thulla.online/og-image.png"><!-- create a 1200x630 PNG -->
+  <meta property="og:image" content="https://thulla.live/og-image.png"><!-- create a 1200x630 PNG -->
   <meta property="og:image:alt" content="Thulla Online card game">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Thulla Online | Play the classic card game with friends">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7309214701326176"
      crossorigin="anonymous"></script>
   <meta name="twitter:description" content="The classic card game, online with friends. Play instantly in your browser.">
-  <meta name="twitter:image" content="https://thulla.online/og-image.png">
+  <meta name="twitter:image" content="https://thulla.live/og-image.png">
   
   <link rel="icon" href="gameicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png"><!-- 180x180 PNG -->
@@ -30,7 +30,7 @@
     "@context": "https://schema.org",
     "@type": "VideoGame",
     "name": "Thulla Multiplayer",
-    "url": "https://thulla.online/",
+    "url": "https://thulla.live/",
     "description": "Free multiplayer Thulla card game with voice chat. Play in your browser or on mobile.",
     "genre": "Card game",
     "playMode": "MultiPlayer",
@@ -239,10 +239,10 @@
     <div id="home">
       <header class="topbar">
         <nav class="tabs" aria-label="Site sections">
-          <a href="/" aria-current="page">Play</a>
-          <a href="/how-to-play">How to Play</a>
-          <a href="/rules">Rules</a>
-          <a href="/faq">FAQ</a>
+          <a href="./" aria-current="page">Play</a>
+          <a href="how-to-play">How to Play</a>
+          <a href="rules">Rules</a>
+          <a href="faq">FAQ</a>
         </nav>
       </header>
       <main>
@@ -287,7 +287,7 @@
       <section class="seo" aria-labelledby="about">
         <h2 id="about">Play Thulla online with friends</h2>
         <p>Thulla is a classic card game where you try to get rid of all your cards before everyone else. On Thulla Online you can create a room, share the link on WhatsApp or Discord, and play together for free in your browser or on Android and iOS, with voice chat.</p>
-        <p>New to the game? Start with the <a href="/how-to-play">step-by-step guide</a>, read the <a href="/rules">full Thulla rules</a>, or check the <a href="/faq">FAQ</a>.</p>
+        <p>New to the game? Start with the <a href="how-to-play">step-by-step guide</a>, read the <a href="rules">full Thulla rules</a>, or check the <a href="faq">FAQ</a>.</p>
       </section>
 
       <footer>© AHSTUDIOS</footer>
@@ -367,7 +367,7 @@
     var started = false;
     function leaveGame() {
       if (started && !confirm("Leave the game and go back to the homepage?")) return false;
-      location.assign("/");   // reloads the page, which also frees the game's memory
+      location.assign(location.pathname);   // reloads the page, which also frees the game's memory
       return true;
     }
     $("btn-home").addEventListener("click", leaveGame);

@@ -1,4 +1,4 @@
-/* thulla.online: central config for all links.
+/* thulla.live: central config for all links.
    Edit the values below once; every page picks them up. */
 
 window.THULLA_LINKS = {
@@ -11,7 +11,7 @@ window.THULLA_LINKS = {
   discord:   "https://discord.gg/Uf2tZAFqm",
 
 // Web player page (the homepage "Play Instantly" button and the invite page both use it)
-  webPlayer: "/",
+  webPlayer: "./",   // relative, so it works on thulla.live and on hbstudios08.github.io/thullalive/
   roomParam: "code"        // query parameter that carries the room code
 };
 
