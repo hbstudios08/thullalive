@@ -7,7 +7,7 @@ window.THULLA_LINKS = {
   appStore:  "https://apps.apple.com/app/id6777625808",
 
   // Community
-  whatsapp:  "https://chat.whatsapp.com/LfpTwCjOGQ50oLdOvhc8dk",
+  reddit:    "https://www.reddit.com/r/ThullaMultiplayer/",   // <- put your subreddit link here, e.g. https://www.reddit.com/r/yourname
   discord:   "https://discord.gg/Uf2tZAFqm",
 
 // Web player page (the homepage "Play Instantly" button and the invite page both use it)

@@ -57,7 +57,7 @@
       color:inherit;border:1px solid var(--line);background:rgba(255,255,255,.06);
       transition:transform .15s ease,border-color .15s ease}
     .community a:hover{transform:translateY(-2px)}
-    #wa:hover,#play:hover{border-color:var(--red-soft)}
+    #rd:hover,#play:hover{border-color:var(--red-soft)}
     #dc:hover,#ios:hover{border-color:var(--purple-soft)}
     .stores{margin-top:18px;font-size:13px;color:var(--muted)}
     .stores a{color:inherit;margin:0 6px}
@@ -87,7 +87,7 @@
 
   <div class="label">Join the community</div>
   <div class="community">
-    <a id="wa" href="#" target="_blank" rel="noopener">💬 WhatsApp</a>
+    <a id="rd" href="#" target="_blank" rel="noopener">👽 Reddit</a>
     <a id="dc" href="#" target="_blank" rel="noopener">🎮 Discord</a>
   </div>
 
@@ -119,7 +119,7 @@
   $("web").href = web.toString();
 
   // Community + store links
-  $("wa").href = L.whatsapp || "#";
+  $("rd").href = L.reddit || "#";
   $("dc").href = L.discord || "#";
   $("play").href = L.playStore || "#";
   $("ios").href = L.appStore || "#";
